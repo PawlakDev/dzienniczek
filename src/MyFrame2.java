@@ -115,9 +115,10 @@ public class MyFrame2 extends JFrame implements ActionListener {
                     // Pobierz arkusz o nazwie "Arkusz1"
                     Sheet sheet = null;
                     int Miesiac = -1;
+
                     if (M == 1 && D >= 2 && D <= 29) Miesiac = 1; //Styczen
                     else if ((M == 1 && D >= 30) || (M == 2 && D <= 26)) Miesiac = 2;//Luty
-                    else if ((M == 2 && D > 26) || (M == 3) || (M == 4 && D <= 2)) ; // Marzec
+                    else if ((M == 2 && D > 26) || (M == 3) || (M == 4 && D <= 2)) Miesiac = 3; // Marzec
 
                     switch (Miesiac) {
                         case 12:
@@ -131,6 +132,9 @@ public class MyFrame2 extends JFrame implements ActionListener {
                             break;
                         case 3:
                             sheet = workbook.getSheet("Marzec 2023");
+                            break;
+                        case 4:
+                            System.out.println("B");
                             break;
                         default:
                             System.out.println("Blad wczytania miesiaca");
